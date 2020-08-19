@@ -51,6 +51,12 @@ namespace MessageBoard.Solution
                     ValidateAudience = false
                 };
             });
+            services.AddApiVersioning(o =>
+            {
+                o.ReportApiVersions = true;
+                o.AssumeDefaultVersionWhenUnspecified = true;
+                o.DefaultApiVersion = new ApiVersion(1, 0);
+            });
 
             // configure DI for application services
             services.AddScoped<IUserService, UserService>();

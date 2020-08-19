@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MessageBoard.Controllers
 {
+  [ApiVersion("1.0")]
   [Route("api/[controller]")]
   [ApiController]
   public class MessagesController : ControllerBase
@@ -67,4 +68,22 @@ namespace MessageBoard.Controllers
       _db.SaveChanges();
     }
   }
+
+
+  [ApiVersion("2.0")]
+  [Route("api/[controller]")]
+  [ApiController]
+  public class MessagesV2Controller : ControllerBase
+  {
+    private MessageBoardContext _db;
+
+    public MessagesV2Controller(MessageBoardContext db)
+    {
+      _db = db;
+    }
+
+
+  }
 }
+
+// localhost:5000/messages/2.0/QUERY
