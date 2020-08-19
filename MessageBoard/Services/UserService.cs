@@ -22,8 +22,8 @@ namespace MessageBoard.Services
         // users hardcoded for simplicity, store in a db with hashed passwords in production applications
         private List<User> _users = new List<User>
         { 
-            new User { Id = 1, FirstName = "Test", LastName = "User", UserName = "test", Password = "test" } 
-            // new User { Id = 2, }
+            new User { Id = 1, FirstName = "Test", LastName = "User", UserName = "test", Password = "test" },
+            new User { Id = 2, FirstName = "Jeff", LastName = "Kim", UserName = "jeffkim", Password = "password" }
         };
 
         private readonly AppSettings _appSettings;

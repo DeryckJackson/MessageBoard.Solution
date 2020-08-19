@@ -19,9 +19,9 @@ namespace MessageBoard.Controllers
 
       [AllowAnonymous]
       [HttpPost("authenticate")]
-      public IActionResult Authenticate(string username, string password)
+      public IActionResult Authenticate([FromBody]User userParam)
       {
-        var user = _userService.Authenticate(username, password);
+        var user = _userService.Authenticate(userParam.UserName, userParam.Password);
 
         if (user == null)
         {
@@ -31,11 +31,12 @@ namespace MessageBoard.Controllers
         return Ok(user);
       }
 
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            var users =  _userService.GetAll();
-            return Ok(users);
-        }
+      // route /users
+      [HttpGet]
+      public IActionResult GetAll()
+      {
+        var users =  _userService.GetAll();
+        return Ok(users);
+      }
     }
 }
