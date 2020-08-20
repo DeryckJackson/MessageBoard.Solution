@@ -91,7 +91,7 @@ namespace MessageBoard.Solution
             });
 
             // global cors policy
-            app.UseCors( x => x
+            app.UseCors(x => x
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader());
